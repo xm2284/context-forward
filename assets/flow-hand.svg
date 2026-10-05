@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-label="context-forward flow">
+  <defs>
+    <filter id="r" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="23" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="r2" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.024" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="p"/>
+      <feColorMatrix in="p" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+    </filter>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1 L9 5 L1 9" fill="none" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/>
+    </marker>
+    <style><![CDATA[
+      .flow { stroke-dasharray: 9 9; animation: dash 1.3s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -18; } }
+    ]]></style>
+  </defs>
+
+  <rect width="1000" height="500" fill="#fbf7ee"/>
+  <rect width="1000" height="500" filter="url(#paper)"/>
+
+  <text x="40" y="56" font-family="'Comic Sans MS','Segoe Print',cursive" font-size="30" fill="#1f1f1f" filter="url(#r2)">触发逻辑</text>
+  <path d="M40 70 q 70 -10 140 0 t 120 0" fill="none" stroke="#e07b39" stroke-width="5" stroke-linecap="round" filter="url(#r2)"/>
+
+  <g font-family="'Comic Sans MS','Segoe Print',cursive">
+    <g filter="url(#r2)">
+      <rect x="400" y="70" width="200" height="62" rx="14" fill="#f3efe4" stroke="#2b2b2b" stroke-width="2.4"/>
+      <text x="500" y="109" text-anchor="middle" font-size="18" fill="#1f1f1f">群消息</text>
+    </g>
+    <g filter="url(#r2)">
+      <rect x="370" y="168" width="260" height="64" rx="14" fill="#ffffff" stroke="#2b2b2b" stroke-width="2.4"/>
+      <text x="500" y="208" text-anchor="middle" font-size="17" fill="#1f1f1f">机器人是否回复？</text>
+    </g>
+    <g filter="url(#r2)">
+      <rect x="60" y="300" width="300" height="70" rx="14" fill="#e5f0dd" stroke="#2b2b2b" stroke-width="2.4"/>
+      <text x="210" y="342" text-anchor="middle" font-size="17" fill="#1f1f1f">静音 · 0 转发</text>
+    </g>
+    <g filter="url(#r2)">
+      <rect x="600" y="270" width="340" height="70" rx="14" fill="#dceaf6" stroke="#2b2b2b" stroke-width="2.4"/>
+      <text x="770" y="312" text-anchor="middle" font-size="16" fill="#1f1f1f">取前文 + 本人回复</text>
+    </g>
+    <g filter="url(#r2)">
+      <rect x="600" y="382" width="340" height="70" rx="14" fill="#fde8cf" stroke="#2b2b2b" stroke-width="2.4"/>
+      <text x="770" y="424" text-anchor="middle" font-size="16" fill="#1f1f1f">私聊给管理员</text>
+    </g>
+  </g>
+
+  <g stroke="#2b2b2b" stroke-width="2.4" fill="none">
+    <line class="flow" x1="500" y1="132" x2="500" y2="164" marker-end="url(#ah)"/>
+    <path class="flow" d="M370 200 L 210 200 L 210 296" marker-end="url(#ah)"/>
+    <path class="flow" d="M630 200 L 770 200 L 770 266" marker-end="url(#ah)"/>
+    <line class="flow" x1="770" y1="340" x2="770" y2="378" marker-end="url(#ah)"/>
+  </g>
+  <g font-family="'Comic Sans MS','Segoe Print',cursive" font-size="16" fill="#8a8a8a">
+    <text x="300" y="192" text-anchor="middle">否</text>
+    <text x="700" y="192" text-anchor="middle">是</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+[project]
+name = "nonebot-plugin-context-forward"
+version = "0.1.0"
+description = "只在机器人参与对话时，把上下文转发给管理员"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "nonebot2>=2.4",
+    "nonebot-adapter-onebot>=2.4",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["nonebot_plugin_context_forward*"]

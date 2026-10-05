@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="context-forward hand-drawn banner">
+  <defs>
+    <filter id="r" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="3" seed="41" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="r2" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="14" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="p"/>
+      <feColorMatrix in="p" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+    </filter>
+    <style><![CDATA[
+      .draw { stroke-dasharray: 1100; stroke-dashoffset: 1100; animation: draw 8s ease-in-out infinite; }
+      @keyframes draw { 0%{stroke-dashoffset:1100} 22%{stroke-dashoffset:0} 82%{stroke-dashoffset:0} 100%{stroke-dashoffset:1100} }
+    ]]></style>
+  </defs>
+
+  <rect width="1200" height="340" fill="#fbf7ee"/>
+  <rect width="1200" height="340" filter="url(#paper)"/>
+
+  <path d="M26 20 C 320 10, 880 28, 1174 16 C 1182 120, 1176 226, 1172 320 C 880 330, 320 312, 30 324 C 18 214, 30 112, 26 20 Z"
+        fill="none" stroke="#2b2b2b" stroke-width="3" stroke-linejoin="round" filter="url(#r)"/>
+
+  <text x="66" y="146" font-family="'Comic Sans MS','Segoe Print',cursive" font-size="78" font-weight="bold" fill="#1f1f1f" filter="url(#r2)">context-forward</text>
+  <path class="draw" d="M70 176 q 70 -14 140 0 t 140 0 t 140 0 t 100 0" fill="none" stroke="#e07b39" stroke-width="7" stroke-linecap="round" filter="url(#r2)"/>
+  <text x="72" y="224" font-family="'Comic Sans MS','Segoe Print',cursive" font-size="25" fill="#3a3a3a" filter="url(#r2)">只在机器人回复时，把上下文转给你</text>
+
+  <g font-family="'Comic Sans MS','Segoe Print',cursive" font-size="18" fill="#2b2b2b">
+    <g filter="url(#r2)">
+      <rect x="74" y="252" width="150" height="44" rx="18" fill="#e5f0dd" stroke="#2b2b2b" stroke-width="2.2"/>
+      <text x="149" y="280" text-anchor="middle">平时静音</text>
+    </g>
+    <g filter="url(#r2)">
+      <rect x="244" y="252" width="190" height="44" rx="18" fill="#dceaf6" stroke="#2b2b2b" stroke-width="2.2"/>
+      <text x="339" y="280" text-anchor="middle">伴随上下文</text>
+    </g>
+    <g filter="url(#r2)">
+      <rect x="454" y="252" width="150" height="44" rx="18" fill="#fde8cf" stroke="#2b2b2b" stroke-width="2.2"/>
+      <text x="529" y="280" text-anchor="middle">定向私聊</text>
+    </g>
+  </g>
+
+  <!-- muted bell + paper plane doodles -->
+  <g filter="url(#r)" stroke="#2b2b2b" stroke-width="2.6" fill="none" stroke-linejoin="round">
+    <path d="M1000 44 q -36 2 -36 42 l 0 20 l -16 20 l 104 0 l -16 -20 l 0 -20 q 0 -40 -36 -42 z" fill="#fde8cf"/>
+    <circle cx="1000" cy="132" r="7" fill="#2b2b2b" stroke="none"/>
+    <line x1="958" y1="40" x2="1042" y2="136"/>
+  </g>
+  <text x="1000" y="172" text-anchor="middle" font-family="'Comic Sans MS','Segoe Print',cursive" font-size="16" fill="#5a5a5a">平时静音</text>
+
+  <g filter="url(#r)" stroke="#2b2b2b" stroke-width="2.6" fill="none" stroke-linejoin="round">
+    <path d="M948 268 L 1054 224 L 1000 292 Z" fill="#dceaf6"/>
+    <path d="M948 268 L 1000 292 L 1000 250"/>
+  </g>
+  <text x="1000" y="322" text-anchor="middle" font-family="'Comic Sans MS','Segoe Print',cursive" font-size="16" fill="#5a5a5a">回复才转发</text>
+</svg>

@@ -1,0 +1,19 @@
+# secrets & real config
+.env
+*.key
+*token*
+
+# backups
+*.bak
+*.bak.*
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# os
+.DS_Store
+Thumbs.db
